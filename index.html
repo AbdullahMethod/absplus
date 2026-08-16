@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Abdullah Bin Shahid - Premium Blogger Themes</title>
+  <title>Abdullah Bin Shahid — Premium Blogger Themes</title>
+  <meta name="description" content="Premium Blogger themes by Abdullah Bin Shahid — modern, fast, responsive and beautifully designed.">
+  <meta name="theme-color" content="#6d5dfc">
   <!-- Font Awesome 6 (free) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -897,9 +902,382 @@
         justify-content: center;
       }
     }
+
+
+    /* ===== CLEAR LICENSE + LIVE DEMO ACTIONS ===== */
+    .abs-main-actions{
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      gap:18px;
+      margin-top:8px;
+    }
+
+    .abs-main-actions .abs-license-btn,
+    .abs-main-actions .abs-demo-btn{
+      min-width:210px;
+      min-height:68px;
+      padding:12px 24px;
+      border-radius:20px;
+      justify-content:center;
+      flex-direction:column;
+      gap:2px;
+      position:relative;
+      font-weight:900;
+      letter-spacing:.7px;
+      box-shadow:0 14px 35px rgba(109,93,252,.22);
+    }
+
+    .abs-main-actions .abs-license-btn{
+      background:linear-gradient(135deg,#6d5dfc,#8b7fff);
+      border:2px solid rgba(255,255,255,.45);
+      color:#fff;
+    }
+
+    .abs-main-actions .abs-demo-btn{
+      background:rgba(255,255,255,.96);
+      border:2px solid #6d5dfc;
+      color:#5e51d8;
+    }
+
+    .abs-main-actions .abs-license-btn i,
+    .abs-main-actions .abs-demo-btn i{
+      font-size:1.05rem;
+      margin-bottom:1px;
+    }
+
+    .abs-main-actions .abs-license-btn small,
+    .abs-main-actions .abs-demo-btn small{
+      display:block;
+      font-size:.66rem;
+      line-height:1.2;
+      letter-spacing:.15px;
+      font-weight:600;
+      opacity:.82;
+      text-transform:none;
+    }
+
+    .abs-main-actions .abs-license-btn::after{
+      content:"REQUIRED";
+      position:absolute;
+      top:-10px;
+      right:14px;
+      padding:4px 8px;
+      border-radius:20px;
+      background:#ff6b6b;
+      color:#fff;
+      font-size:.57rem;
+      letter-spacing:.7px;
+      font-weight:900;
+      box-shadow:0 6px 15px rgba(255,107,107,.3);
+    }
+
+    .abs-main-actions .abs-demo-btn::after{
+      content:"PREVIEW";
+      position:absolute;
+      top:-10px;
+      right:14px;
+      padding:4px 8px;
+      border-radius:20px;
+      background:#eef0ff;
+      color:#6357d8;
+      border:1px solid #dcd8ff;
+      font-size:.57rem;
+      letter-spacing:.7px;
+      font-weight:900;
+    }
+
+    .abs-main-actions .abs-license-btn:hover,
+    .abs-main-actions .abs-demo-btn:hover{
+      transform:translateY(-8px) scale(1.035);
+    }
+
+    @media(max-width:560px){
+      .abs-main-actions{
+        flex-direction:column;
+        width:100%;
+        gap:14px;
+      }
+      .abs-main-actions .abs-license-btn,
+      .abs-main-actions .abs-demo-btn{
+        width:100%;
+        min-width:0;
+        min-height:64px;
+      }
+    }
+
+    /* ===== ABS PREMIUM 3D EXPERIENCE =====
+    :root{
+      --abs-primary:#6d5dfc;
+      --abs-primary2:#9b8cff;
+      --abs-pink:#ff6b9d;
+      --abs-blue:#5cc8ff;
+      --abs-dark:#151535;
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 12% 12%,rgba(109,93,252,.11),transparent 26%),
+        radial-gradient(circle at 88% 24%,rgba(92,200,255,.08),transparent 25%),
+        radial-gradient(circle at 75% 88%,rgba(255,107,157,.08),transparent 27%),
+        #f8faff;
+    }
+
+    .orb{
+      opacity:.42;
+      filter:blur(105px);
+      mix-blend-mode:multiply;
+    }
+
+    /* Floating 3D particles */
+    .abs-particles{
+      position:fixed;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .abs-particle{
+      position:absolute;
+      width:7px;height:7px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#fff,#9b8cff);
+      box-shadow:0 0 18px rgba(109,93,252,.6);
+      animation:absParticleFloat linear infinite;
+      opacity:.5;
+    }
+    .abs-particle:nth-child(1){left:8%;top:28%;animation-duration:14s}
+    .abs-particle:nth-child(2){left:20%;top:75%;width:4px;height:4px;animation-duration:18s}
+    .abs-particle:nth-child(3){left:43%;top:18%;width:5px;height:5px;animation-duration:12s}
+    .abs-particle:nth-child(4){left:68%;top:66%;animation-duration:20s}
+    .abs-particle:nth-child(5){left:84%;top:35%;width:4px;height:4px;animation-duration:15s}
+    .abs-particle:nth-child(6){left:92%;top:78%;width:6px;height:6px;animation-duration:17s}
+
+    @keyframes absParticleFloat{
+      0%{transform:translate3d(0,40px,0);opacity:0}
+      15%{opacity:.55}
+      50%{transform:translate3d(35px,-90px,0) scale(1.5);opacity:.7}
+      85%{opacity:.35}
+      100%{transform:translate3d(-25px,-180px,0);opacity:0}
+    }
+
+    .navbar{
+      padding:1rem 2.2rem;
+      background:rgba(255,255,255,.72);
+      border-bottom:1px solid rgba(109,93,252,.13);
+      box-shadow:0 12px 40px rgba(35,32,85,.08);
+    }
+    .navbar.scrolled{
+      padding:.62rem 2.2rem;
+      background:rgba(255,255,255,.86);
+    }
+
+    .navbar-logo-icon{
+      position:relative;
+      overflow:hidden;
+      transform:translateZ(0);
+      box-shadow:0 8px 28px rgba(109,93,252,.36);
+    }
+    .navbar-logo-icon::before{
+      content:"";
+      position:absolute;
+      inset:-80%;
+      background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+      transform:rotate(20deg);
+      animation:absLogoShine 4s infinite;
+    }
+    @keyframes absLogoShine{
+      0%,45%{transform:translateX(-70%) rotate(20deg)}
+      70%,100%{transform:translateX(70%) rotate(20deg)}
+    }
+
+    .hero{
+      min-height:100vh;
+      perspective:1200px;
+      overflow:hidden;
+    }
+
+    .hero-content{
+      max-width:900px;
+      position:relative;
+      transform-style:preserve-3d;
+      animation:absHeroIn 1.1s cubic-bezier(.2,.8,.2,1);
+    }
+
+    @keyframes absHeroIn{
+      from{opacity:0;transform:translateY(55px) rotateX(10deg)}
+      to{opacity:1;transform:translateY(0) rotateX(0)}
+    }
+
+    .hero-content::before{
+      content:"";
+      position:absolute;
+      width:420px;height:420px;
+      left:50%;top:48%;
+      transform:translate(-50%,-50%) translateZ(-80px);
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(109,93,252,.16),transparent 67%);
+      filter:blur(12px);
+      animation:absHeroGlow 5s ease-in-out infinite;
+      z-index:-1;
+    }
+
+    @keyframes absHeroGlow{
+      0%,100%{transform:translate(-50%,-50%) translateZ(-80px) scale(.92)}
+      50%{transform:translate(-50%,-50%) translateZ(-80px) scale(1.12)}
+    }
+
+    .hero-badge{
+      transform:translateZ(40px);
+      box-shadow:0 12px 35px rgba(109,93,252,.32);
+    }
+
+    .hero h1{
+      position:relative;
+      transform:translateZ(55px);
+      text-shadow:0 20px 50px rgba(109,93,252,.14);
+    }
+
+    .hero p{
+      max-width:740px;
+      margin-left:auto;
+      margin-right:auto;
+      transform:translateZ(28px);
+    }
+
+    .hero-buttons{
+      transform:translateZ(45px);
+    }
+
+    .btn-primary,.btn-secondary{
+      position:relative;
+      overflow:hidden;
+      transform-style:preserve-3d;
+    }
+    .btn-primary::before,.btn-secondary::before{
+      content:"";
+      position:absolute;
+      inset:-100%;
+      background:linear-gradient(115deg,transparent 43%,rgba(255,255,255,.38) 50%,transparent 57%);
+      transform:translateX(-45%) rotate(12deg);
+      animation:absButtonShine 4.5s infinite;
+      pointer-events:none;
+    }
+    @keyframes absButtonShine{
+      0%,55%{transform:translateX(-45%) rotate(12deg)}
+      78%,100%{transform:translateX(45%) rotate(12deg)}
+    }
+
+    .btn-primary:hover,.btn-secondary:hover{
+      transform:translateY(-7px) rotateX(2deg) scale(1.025);
+    }
+
+    .section{
+      perspective:1200px;
+    }
+
+    .section-title{
+      text-shadow:0 8px 30px rgba(109,93,252,.08);
+    }
+
+    .feature-card,.testimonial-card,.faq-item,.steps-container,.contact-link{
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    .feature-card{
+      position:relative;
+      overflow:hidden;
+      transform-style:preserve-3d;
+    }
+    .feature-card::after{
+      content:"";
+      position:absolute;
+      width:170px;height:170px;
+      right:-80px;top:-80px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(109,93,252,.12),transparent 70%);
+      pointer-events:none;
+      transition:.5s;
+    }
+    .feature-card:hover{
+      transform:translateY(-11px) rotateX(2deg) rotateY(-2deg) scale(1.012);
+      box-shadow:0 25px 55px rgba(35,32,85,.13);
+    }
+    .feature-card:hover::after{
+      transform:scale(1.5);
+    }
+
+    .feature-icon{
+      box-shadow:0 10px 25px rgba(109,93,252,.12);
+    }
+
+    .license-key-display{
+      box-shadow:0 25px 70px rgba(42,35,100,.25);
+      transform-style:preserve-3d;
+    }
+
+    .steps-container{
+      box-shadow:0 15px 40px rgba(35,32,85,.07);
+    }
+
+    .testimonial-card{
+      position:relative;
+      overflow:hidden;
+    }
+    .testimonial-card:hover{
+      transform:translateY(-8px) rotateX(1deg);
+      box-shadow:0 22px 50px rgba(35,32,85,.12);
+    }
+
+    .faq-item{
+      box-shadow:0 8px 24px rgba(35,32,85,.045);
+    }
+
+    .contact-link{
+      box-shadow:0 8px 25px rgba(35,32,85,.05);
+    }
+
+    .footer{
+      box-shadow:0 -20px 60px rgba(35,32,85,.10);
+    }
+
+    /* Subtle cursor spotlight */
+    #absSpotlight{
+      position:fixed;
+      width:260px;height:260px;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:9999;
+      background:radial-gradient(circle,rgba(109,93,252,.10),transparent 68%);
+      transform:translate(-50%,-50%);
+      opacity:0;
+      transition:opacity .25s ease;
+    }
+
+    @media(max-width:768px){
+      .navbar,.navbar.scrolled{padding:.7rem 1rem}
+      .hero{min-height:90vh}
+      .hero-content::before{width:300px;height:300px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <div id="absSpotlight"></div>
+  <div class="abs-particles" aria-hidden="true">
+    <span class="abs-particle"></span><span class="abs-particle"></span>
+    <span class="abs-particle"></span><span class="abs-particle"></span>
+    <span class="abs-particle"></span><span class="abs-particle"></span>
+  </div>
   <!-- BACKGROUND ORBS -->
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
@@ -924,6 +1302,7 @@
       <a href="#testimonials">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="users.html"><i class="fas fa-users"></i> Users</a>
     </div>
   </nav>
 
@@ -935,12 +1314,16 @@
       </div>
       <h1>Abdullah Bin Shahid</h1>
       <p>Premium Blogger themes with professional design, lightning-fast performance, and complete customization. Get your license key and unlock the full potential of your blog today.</p>
-      <div class="hero-buttons">
-        <a href="#download" class="btn-primary">
-          <i class="fas fa-download"></i> Download Now
+      <div class="hero-buttons abs-main-actions">
+        <a href="#license" class="btn-primary abs-license-btn">
+          <i class="fas fa-key"></i>
+          <span>LICENSE</span>
+          <small>Activate Theme</small>
         </a>
-        <a href="#license" class="btn-secondary">
-          <i class="fas fa-key"></i> Get License
+        <a href="https://abdullah.nyc.mn/" target="_blank" rel="noopener" class="btn-secondary abs-demo-btn">
+          <i class="fas fa-eye"></i>
+          <span>LIVE DEMO</span>
+          <small>Preview Theme</small>
         </a>
       </div>
     </div>
@@ -1174,6 +1557,7 @@
       <a href="#license">License</a>
       <a href="#download">Download</a>
       <a href="#contact">Contact</a>
+      <a href="users.html">Users</a>
     </div>
     <div class="footer-divider"></div>
     <p>
@@ -1258,7 +1642,45 @@
       item.classList.toggle('active');
     }
 
-    console.log("✨ Full Website - Abdullah Bin Shahid Premium Blogger Themes");
+
+    // ===== ABS 3D MICRO-INTERACTIONS =====
+    (() => {
+      const spotlight = document.getElementById('absSpotlight');
+      const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      if (canTilt) {
+        window.addEventListener('pointermove', (e) => {
+          spotlight.style.left = e.clientX + 'px';
+          spotlight.style.top = e.clientY + 'px';
+          spotlight.style.opacity = '1';
+
+          const hero = document.querySelector('.hero-content');
+          if (hero && window.scrollY < window.innerHeight * .9) {
+            const x = (e.clientX / window.innerWidth - .5) * 5;
+            const y = (e.clientY / window.innerHeight - .5) * -4;
+            hero.style.transform = `translateY(0) rotateX(${y}deg) rotateY(${x}deg)`;
+          }
+        });
+
+        window.addEventListener('pointerleave', () => {
+          spotlight.style.opacity = '0';
+        });
+
+        document.querySelectorAll('.feature-card,.testimonial-card').forEach(card => {
+          card.addEventListener('pointermove', (e) => {
+            const r = card.getBoundingClientRect();
+            const x = ((e.clientX-r.left)/r.width-.5)*5;
+            const y = ((e.clientY-r.top)/r.height-.5)*-5;
+            card.style.transform = `translateY(-9px) rotateX(${y}deg) rotateY(${x}deg) scale(1.01)`;
+          });
+          card.addEventListener('pointerleave', () => {
+            card.style.transform = '';
+          });
+        });
+      }
+    })();
+
+    console.log("✨ ABS Premium 3D Website - Abdullah Bin Shahid");
   </script>
 </body>
 </html>
