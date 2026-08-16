@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>THEME USERS</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --purple:#8b5cf6;
+  --purple2:#6d28d9;
+  --pink:#ec4899;
+  --blue:#3b82f6;
+  --text:#182033;
+  --muted:#718096;
+  --card:rgba(255,255,255,.78);
+  --border:rgba(255,255,255,.7);
+}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:var(--text);overflow-x:hidden;
+  background:linear-gradient(135deg,#f8f7ff 0%,#eef5ff 48%,#fff4fb 100%);
+}
+body:before,body:after{
+  content:"";position:fixed;border-radius:50%;filter:blur(70px);opacity:.45;
+  pointer-events:none;z-index:-1;animation:float 10s ease-in-out infinite alternate;
+}
+body:before{width:320px;height:320px;background:#c4b5fd;top:-80px;left:-70px}
+body:after{width:360px;height:360px;background:#f9a8d4;right:-100px;bottom:-100px;animation-delay:-4s}
+@keyframes float{to{transform:translate(35px,25px) scale(1.08)}}
+.container{width:min(1120px,calc(100% - 28px));margin:32px auto 50px}
+.glass{
+  background:var(--card);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--border);box-shadow:0 20px 55px rgba(55,48,107,.10);
+}
+.hero{
+  position:relative;overflow:hidden;border-radius:28px;padding:32px;margin-bottom:20px;
+  animation:rise .65s ease both;
+}
+.hero:after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);right:-55px;top:-75px;opacity:.13;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;
+  background:rgba(139,92,246,.1);color:var(--purple2);font-size:12px;font-weight:800;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.12);animation:pulse 1.7s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(34,197,94,0)}}
+h1{margin:14px 0 7px;font-size:clamp(28px,5vw,42px);letter-spacing:-1.4px}
+.hero p{margin:0;color:var(--muted);font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:20px}
+.stat{border-radius:22px;padding:22px;animation:rise .7s ease both}
+.stat:nth-child(2){animation-delay:.08s}
+.stat-label{font-size:13px;color:var(--muted);font-weight:700}
+.stat-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.stat-value{font-size:34px;font-weight:850;letter-spacing:-1px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800}
+.status i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.12)}
+.status.offline{color:#dc2626}.status.offline i{background:#ef4444;box-shadow:0 0 0 5px rgba(239,68,68,.12)}
+.panel{border-radius:26px;padding:22px;animation:rise .75s ease both;animation-delay:.14s}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.title{font-size:19px;font-weight:850}
+.subtitle{font-size:12px;color:var(--muted);margin-top:3px}
+.refresh{
+  border:0;cursor:pointer;color:#fff;font-weight:800;border-radius:12px;padding:10px 15px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 8px 20px rgba(139,92,246,.25);
+  transition:.2s transform,.2s box-shadow;
+}
+.refresh:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(139,92,246,.32)}
+.refresh:active{transform:scale(.97)}
+.refresh.spin{animation:buttonspin .55s ease}
+@keyframes buttonspin{to{transform:rotate(360deg)}}
+.loading{text-align:center;padding:55px 10px;color:var(--muted)}
+.loader{width:38px;height:38px;margin:0 auto 14px;border:4px solid rgba(139,92,246,.14);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.site{
+  display:flex;align-items:center;gap:15px;padding:17px 8px;border-bottom:1px solid rgba(100,116,139,.11);
+  opacity:0;transform:translateY(10px);animation:sitein .5s ease forwards;
+}
+@keyframes sitein{to{opacity:1;transform:none}}
+.site:last-child{border-bottom:0}
+.num{
+  width:38px;height:38px;display:grid;place-items:center;flex:0 0 38px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(139,92,246,.13),rgba(236,72,153,.12));
+  color:var(--purple2);font-weight:850;font-size:13px;
+}
+.info{min-width:0;flex:1}
+.url{display:block;color:#2563eb;font-weight:800;text-decoration:none;word-break:break-all}
+.url:hover{text-decoration:underline}
+.meta{margin-top:5px;color:var(--muted);font-size:11px;line-height:1.7}
+.open{
+  flex:0 0 auto;text-decoration:none;color:#fff;background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+  padding:9px 13px;border-radius:10px;font-size:12px;font-weight:800;transition:.2s transform;
+}
+.open:hover{transform:translateY(-2px)}
+.empty,.error{text-align:center;padding:45px 15px;color:var(--muted)}
+.error{color:#dc2626;background:rgba(254,226,226,.45);border-radius:14px}
+.footer{text-align:center;color:#8993a5;font-size:11px;margin-top:18px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:650px){
+  .container{width:calc(100% - 16px);margin:14px auto 35px}
+  .hero{padding:24px;border-radius:22px}
+  .stats{grid-template-columns:1fr;gap:12px}
+  .stat,.panel{border-radius:20px}
+  .panel{padding:16px}
+  .site{align-items:flex-start}
+  .open{padding:8px 10px}
+  .num{width:34px;height:34px;flex-basis:34px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <section class="hero glass">
+    <div class="badge"><span class="dot"></span> LIVE TRACKER</div>
+    <h1>Theme USERS</h1>
+    <p>All Blogger sites detected using the theme</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat glass">
+      <div class="stat-label">TOTAL DETECTED BLOGS</div>
+      <div class="stat-row"><div class="stat-value" id="total">0</div></div>
+    </div>
+    <div class="stat glass">
+      <div class="stat-label">TRACKER STATUS</div>
+      <div class="stat-row">
+        <div class="status" id="status"><i></i><span>Connecting...</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel glass">
+    <div class="panel-head">
+      <div>
+        <div class="title">Detected Blogger Sites</div>
+        <div class="subtitle">Updates automatically every 30 seconds</div>
+      </div>
+      <button class="refresh" id="refresh" onclick="loadSites(true)">Refresh</button>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="loader"></div>
+      Loading detected blogs...
+    </div>
+    <div id="sitesList"></div>
+  </section>
+
+  <div class="footer">ABS Theme Tracker • Powered by Cloudflare</div>
+</div>
+
+<script>
+const API="https://456.moviepoints1999.workers.dev/sites";
+
+async function loadSites(manual=false){
+  const loading=document.getElementById("loading");
+  const list=document.getElementById("sitesList");
+  const total=document.getElementById("total");
+  const status=document.getElementById("status");
+  const refresh=document.getElementById("refresh");
+
+  if(manual) refresh.classList.add("spin");
+  if(!list.innerHTML) loading.style.display="block";
+
+  try{
+    const response=await fetch(API+"?_="+Date.now(),{
+      method:"GET",cache:"no-store"
+    });
+    if(!response.ok) throw new Error("HTTP "+response.status);
+
+    const data=await response.json();
+    const sites=Array.isArray(data)?data:(Array.isArray(data.sites)?data.sites:[]);
+
+    total.textContent=sites.length;
+    status.className="status";
+    status.innerHTML="<i></i><span>Online</span>";
+    loading.style.display="none";
+
+    if(!sites.length){
+      list.innerHTML='<div class="empty">No Blogger sites detected yet.</div>';
+      return;
+    }
+
+    list.innerHTML=sites.map((site,index)=>{
+      const blog=site.blog_url||"";
+      return `
+        <div class="site" style="animation-delay:${Math.min(index*45,500)}ms">
+          <div class="num">${index+1}</div>
+          <div class="info">
+            <a class="url" href="${escapeHTML(blog)}" target="_blank" rel="noopener noreferrer">${escapeHTML(blog)}</a>
+            <div class="meta">
+              First detected: ${escapeHTML(site.first_seen||"-")}<br>
+              Last seen: ${escapeHTML(site.last_seen||"-")}
+            </div>
+          </div>
+          <a class="open" href="${escapeHTML(blog)}" target="_blank" rel="noopener noreferrer">Open</a>
+        </div>`;
+    }).join("");
+  }catch(error){
+    console.error(error);
+    status.className="status offline";
+    status.innerHTML="<i></i><span>Offline</span>";
+    loading.style.display="none";
+    list.innerHTML=`<div class="error">Unable to load detected blogs.<br><small>${escapeHTML(error.message||"API connection failed")}</small></div>`;
+  }finally{
+    if(manual) setTimeout(()=>refresh.classList.remove("spin"),550);
+  }
+}
+
+function escapeHTML(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+loadSites();
+setInterval(loadSites,30000);
+</script>
+</body>
+</html>
