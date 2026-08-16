@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Abdullah Bin Shahid — Premium Blogger Themes</title>
-  <meta name="description" content="Premium Blogger themes by Abdullah Bin Shahid — modern, fast, responsive and beautifully designed.">
+  <title>Blogger Theme — ABS Plus</title>
+  <meta name="description" content="ABS Plus is a modern premium Blogger theme built for fast, responsive and beautiful blogs.">
   <meta name="theme-color" content="#6d5dfc">
   <!-- Font Awesome 6 (free) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1269,6 +1269,155 @@
       }
     }
 
+  
+    /* ===== ABS PLUS THEME IDENTITY ===== */
+    .abs-theme-identity{
+      margin:24px auto 0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      color:#73778b;
+      font-size:.72rem;
+      font-weight:700;
+    }
+    .abs-theme-identity span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 11px;
+      border:1px solid #e7e5f5;
+      background:rgba(255,255,255,.68);
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(35,32,85,.04);
+    }
+    .abs-theme-identity i{color:#6d5dfc}
+
+  
+    /* ===== COLORFUL ABS PLUS HEADER ===== */
+    .navbar-logo{
+      position:relative;
+      padding-right:14px;
+    }
+    .navbar-logo::after{
+      content:"ABS PLUS • BLOGGER THEME";
+      position:absolute;
+      left:54px;
+      bottom:-7px;
+      font-size:.49rem;
+      font-weight:900;
+      letter-spacing:1.15px;
+      white-space:nowrap;
+      color:#6d5dfc;
+      opacity:.9;
+      animation:absHeaderText 3s ease-in-out infinite;
+    }
+    @keyframes absHeaderText{
+      0%,100%{opacity:.55;transform:translateY(0)}
+      50%{opacity:1;transform:translateY(-1px)}
+    }
+
+    .navbar-logo-text{
+      position:relative;
+      background:linear-gradient(90deg,#1a1a3e,#6d5dfc,#ff4fa0,#ff8a4c,#6d5dfc);
+      background-size:260% auto;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent!important;
+      animation:absBrandGradient 5s linear infinite;
+    }
+    @keyframes absBrandGradient{
+      to{background-position:260% center}
+    }
+
+    .navbar-logo-icon{
+      background:linear-gradient(135deg,#6d5dfc 0%,#9b6dff 30%,#ff5fa2 65%,#ff9a55 100%);
+      background-size:200% 200%;
+      animation:absIconGradient 5s ease infinite,logoPulse 3s infinite;
+    }
+    @keyframes absIconGradient{
+      0%,100%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+    }
+
+    .abs-header-theme{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+      padding-top:4px;
+    }
+    .abs-header-theme span{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:5px 11px;
+      border-radius:0 0 15px 15px;
+      color:#fff;
+      font-size:.56rem;
+      font-weight:900;
+      letter-spacing:1px;
+      background:linear-gradient(90deg,#6d5dfc,#ff4fa0,#ff8a4c,#5cc8ff,#6d5dfc);
+      background-size:260% auto;
+      animation:absHeaderTheme 6s linear infinite;
+      box-shadow:0 7px 20px rgba(109,93,252,.2);
+    }
+    @keyframes absHeaderTheme{
+      to{background-position:260% center}
+    }
+
+    @media(max-width:768px){
+      .navbar-logo::after{left:48px;font-size:.42rem;letter-spacing:.8px}
+      .navbar-logo-text{font-size:1rem}
+    }
+
+  
+    /* ===== EXTRA COLOR MOTION ===== */
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:540px;height:540px;
+      left:50%;top:50%;
+      transform:translate(-50%,-50%);
+      border-radius:50%;
+      background:
+        conic-gradient(from 0deg,
+          rgba(109,93,252,.11),
+          rgba(255,79,160,.08),
+          rgba(255,138,76,.07),
+          rgba(92,200,255,.08),
+          rgba(109,93,252,.11));
+      filter:blur(25px);
+      animation:absColorOrbit 12s linear infinite;
+      pointer-events:none;
+      z-index:-1;
+    }
+    @keyframes absColorOrbit{
+      to{transform:translate(-50%,-50%) rotate(360deg) scale(1.08)}
+    }
+
+    .section-divider{
+      background:linear-gradient(90deg,#6d5dfc,#ff4fa0,#ff8a4c,#5cc8ff,#6d5dfc)!important;
+      background-size:220% auto!important;
+      animation:absDividerFlow 4s linear infinite;
+    }
+    @keyframes absDividerFlow{
+      to{background-position:220% center}
+    }
+
+    .feature-icon{
+      background:linear-gradient(135deg,#f0efff,#fff0f6,#fff6ed)!important;
+      color:#6d5dfc!important;
+    }
+    .feature-card:hover .feature-icon{
+      background:linear-gradient(135deg,#6d5dfc,#ff4fa0,#ff8a4c)!important;
+      color:#fff!important;
+    }
+
   </style>
 </head>
 <body>
@@ -1290,6 +1439,7 @@
         <i class="fas fa-crown"></i>
       </div>
       <div class="navbar-logo-text">Abdullah <span>Bin Shahid</span></div>
+      <div class="abs-header-theme"><span><i class="fas fa-layer-group"></i> ABS PLUS BLOGGER THEME</span></div>
     </div>
     <button class="navbar-toggle" id="navbarToggle" onclick="toggleNavbar()">
       <i class="fas fa-bars"></i>
@@ -1302,38 +1452,39 @@
       <a href="#testimonials">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-      <a href="users.html"><i class="fas fa-users"></i> Users</a>
+      <a href="users.html"><i class="fas fa-users"></i> Theme Users</a>
     </div>
   </nav>
 
   <!-- HERO / HOME -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fas fa-crown"></i> Premium Themes
-      </div>
-      <h1>Abdullah Bin Shahid</h1>
-      <p>Premium Blogger themes with professional design, lightning-fast performance, and complete customization. Get your license key and unlock the full potential of your blog today.</p>
+      <div class="hero-badge"><i class="fas fa-sparkles"></i> ABS PLUS • PREMIUM BLOGGER THEME</div>
+      <h1>ABS Plus Blogger Theme</h1>
+      <p>A colorful, modern and powerful Blogger theme designed for creators who want a beautiful website, smooth animations, fast performance, responsive layouts and a professional user experience.</p>
       <div class="hero-buttons abs-main-actions">
         <a href="#license" class="btn-primary abs-license-btn">
           <i class="fas fa-key"></i>
-          <span>LICENSE</span>
-          <small>Activate Theme</small>
+          <span>LICENSE</span><small>Activate ABS Plus</small>
         </a>
         <a href="https://abdullah.nyc.mn/" target="_blank" rel="noopener" class="btn-secondary abs-demo-btn">
           <i class="fas fa-eye"></i>
-          <span>LIVE DEMO</span>
-          <small>Preview Theme</small>
+          <span>LIVE DEMO</span><small>Preview ABS Plus</small>
         </a>
+      </div>
+      <div class="abs-theme-identity">
+        <span><i class="fas fa-check-circle"></i> Blogger Ready</span>
+        <span><i class="fas fa-mobile-alt"></i> Fully Responsive</span>
+        <span><i class="fas fa-bolt"></i> Fast & Lightweight</span>
       </div>
     </div>
   </section>
 
   <!-- FEATURES -->
   <section class="section" id="features">
-    <h2 class="section-title">✨ Premium Features</h2>
+    <h2 class="section-title">✨ ABS Plus Features</h2>
     <div class="section-divider"></div>
-    <p class="section-subtitle">Everything you need for a professional blog</p>
+    <p class="section-subtitle">Everything you need to build a fast, modern and professional Blogger website with ABS Plus</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon"><i class="fas fa-bolt"></i></div>
@@ -1372,7 +1523,7 @@
   <section class="section" id="license">
     <h2 class="section-title">🔐 License Activation</h2>
     <div class="section-divider"></div>
-    <p class="section-subtitle">Enter your license key to unlock the full theme</p>
+    <p class="section-subtitle">Activate your ABS Plus Blogger theme with the official license key</p>
     <div class="license-wrapper">
       <div class="license-key-display">
         <div class="license-key-label">
@@ -1389,7 +1540,7 @@
           <div class="steps-header-icon">
             <i class="fas fa-lock"></i>
           </div>
-          <h3>Theme Locked - License Required</h3>
+          <h3>ABS Plus — License Required</h3>
         </div>
         <ul class="steps-list">
           <li>
@@ -1411,14 +1562,14 @@
 
   <!-- DOWNLOAD SECTION -->
   <section class="section" id="download">
-    <h2 class="section-title">⬇️ Download Theme</h2>
+    <h2 class="section-title">⬇️ Download ABS Plus</h2>
     <div class="section-divider"></div>
-    <p class="section-subtitle">Get the complete premium Blogger theme package</p>
+    <p class="section-subtitle">Download the complete ABS Plus Blogger theme package and get started with your Blogger website.</p>
     <div class="download-wrapper">
       <div class="btn-download-wrapper">
         <span class="pulse-ring"></span>
         <a href="https://abdullah.nyc.mn/" target="_blank" class="btn-download">
-          <i class="fas fa-download"></i> Download Now
+          <i class="fas fa-download"></i> Download ABS Plus
         </a>
       </div>
     </div>
@@ -1426,7 +1577,7 @@
 
   <!-- TESTIMONIALS -->
   <section class="section" id="testimonials">
-    <h2 class="section-title">💬 Client Reviews</h2>
+    <h2 class="section-title">💬 ABS Plus User Reviews</h2>
     <div class="section-divider"></div>
     <p class="section-subtitle">What our users say about us</p>
     <div class="testimonials-grid">
@@ -1501,11 +1652,11 @@
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Is the theme really free?</span>
+          <span>What is ABS Plus?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          The theme is premium and requires a license key. The key provided is for activation purposes. Full support and updates are included.
+          ABS Plus is a premium Blogger theme and requires a valid license key for activation. The key provided is for activation purposes. Full support and updates are included.
         </div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -1531,9 +1682,9 @@
 
   <!-- CONTACT -->
   <section class="section" id="contact">
-    <h2 class="section-title">📞 Contact Us</h2>
+    <h2 class="section-title">📞 ABS Plus Support</h2>
     <div class="section-divider"></div>
-    <p class="section-subtitle">Get in touch with Abdullah Bin Shahid</p>
+    <p class="section-subtitle">Get in touch with Blogger Theme</p>
     <div class="contact-wrapper">
       <div class="contact-links">
         <a href="https://abdullah.nyc.mn/" target="_blank" class="contact-link">
@@ -1557,11 +1708,11 @@
       <a href="#license">License</a>
       <a href="#download">Download</a>
       <a href="#contact">Contact</a>
-      <a href="users.html">Users</a>
+      <a href="users.html">Theme Users</a>
     </div>
     <div class="footer-divider"></div>
     <p>
-      <i class="fas fa-copyright"></i> 2025 <strong style="color: #ffb86b;">Abdullah Bin Shahid</strong> | All Rights Reserved
+      <i class="fas fa-copyright"></i> 2025 <strong style="color: #ffb86b;">ABS Plus</strong> | All Rights Reserved
     </p>
     <div class="footer-divider"></div>
     <p>
@@ -1680,7 +1831,7 @@
       }
     })();
 
-    console.log("✨ ABS Premium 3D Website - Abdullah Bin Shahid");
+    console.log("✨ ABS Plus Blogger Theme — Premium 3D Website");
   </script>
 </body>
 </html>
